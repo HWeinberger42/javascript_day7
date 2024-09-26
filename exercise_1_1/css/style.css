@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid lime; */
+}
+
+a {
+    text-decoration: none;
+}
+
+ul { /* all ul's are used in navbars */
+    display: flex;
+}
+
+li {
+    align-content: center;
+}
+
+li::marker {
+    content: '';
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    /* to accomodate different aspect ratios of 
+    grid cells depending on media query */
+    object-position: left; 
+    object-fit: cover;
+}
+
+/* header */
+
+header a {
+    color: black;
+}
+
+h1 {
+    display: inline;
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+    font-size: 2.5em;
+    /* margin-block-start: 0;
+    margin-block-end: 0; */
+}
+
+header > nav > ul:first-child {
+    /* display: flex; */
+    justify-content: space-between;
+    padding-inline: 2%;
+    /* padding-block: 2%; */
+
+}
+
+/* header > nav > ul:first-child > li:first-child, 
+header > nav > ul:first-child > li:nth-child(3), 
+header > nav > ul:first-child > li:last-child {
+    flex: 1;
+} */
+
+/* 2nd li is empty and fills out space between h2 and the last 2 */
+header > nav > ul:first-child > li:nth-child(2) {
+    flex: auto;
+}
+
+header > nav > ul:first-child > li{
+    padding-block: 1%;
+    padding-inline: 1%;
+}
+
+header > nav > ul:last-child {
+    /* display: flex; */
+    justify-content: space-around;
+    border-block: .1em solid black;
+    padding-block: .2em;
+}
+
+/* index.html main */
+
+.swiper {
+    /* width: 600px; */
+    height: 75vh;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: antiquewhite;
+    text-shadow: 2px 2px 2px rgb(160, 160, 160);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: antiquewhite;
+}
+
+@keyframes backInRight {
+    0% {
+      transform: translateX(2000px) scale(0.7);
+      opacity: 0.7;
+    }
+  
+    25% {
+      transform: translateX(0px) scale(0.7);
+      opacity: 0.7;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes backInLeft {
+    0% {
+      transform: translateX(-2000px) scale(0.7);
+      opacity: 0.7;
+    }
+  
+    25% {
+      transform: translateX(0px) scale(0.7);
+      opacity: 0.7;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+/* .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1%;
+    width: 100vw;
+    padding-block: 3%;
+    padding-inline: 10%;
+    /* crutch for container not getting longer */
+    /* overflow-y: scroll;         
+} */
+
+/* .container > div {
+    position: relative;
+} */
+
+img + a {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    text-align: center;
+    align-content: center;
+    font-size: 6em;
+    padding-bottom: 1vh;
+    color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* footer */
+
+footer, footer a {
+    color: antiquewhite;
+    background-color: black;
+}
+
+footer > nav > ul {
+    /* width: 70%; */
+    justify-content: center;
+}
+
+footer > nav > ul:first-child > li {
+    text-align: center;
+    /* flex: 1; */
+    padding-inline: 3%;
+}
+
+footer > nav > ul:last-child > li {
+    padding: 1%;
+}
+
+footer div:last-child {
+    align-content: center;
+    text-align: center;
+}
+
+/* responsiveness in container of index.html 
+to window size <= 480px as in mobile devices*/
+
+/* @media (width <= 480px) {
+    .container { */
+        /* display: grid; */
+        /* grid-template-columns: 1fr; */
+        /* width: 100%; */
+    /* }
+} */
+
+/* responsiveness in container of index.html
+to window size between >= 480px and <= 768px as in tablet devices*/
+
+/* @media (width >= 480px) and (width <= 768px) {
+    .container { */
+        /* display: grid; */
+        /* grid-template-columns: 1fr 1fr; */
+        /* width: 100%; */
+    /* }
+} */
+
+/* style of main section in monthRecipe.html */
+
+.containerRecipeMonth {
+    display: grid;
+    width: 100vw;
+    padding-inline: 10%;
+    padding-block: 2%;
+}
+
+.containerRecipeMonth h2, h3, h4 {
+    text-align: center;
+}
+
+.containerRecipeMonth h3 {
+    font-size: 1.25em;
+    padding-top: 4%;
+    padding-bottom: 1%;
+    /* text-align: center; */
+}
+
+.containerRecipeMonth div:has(> img) {
+    margin-inline: auto;
+    width: 50%;
+}
+
+.containerRecipeMonth img {
+    object-fit: contain;
+    /* max-height: 25vh; */
+}
+
+.containerRecipeMonth dd > ul, .containerRecipeMonth ul:last-child  {
+    display: grid;
+    padding-block: .5%;
+}
+
+.containerRecipeMonth dt {
+    font-weight: bold;
+}
+
+.containerRecipeMonth dd {
+    margin-inline-start: 2em;
+}
+
+.containerRecipeMonth li {
+    margin-left: 1em;
+    padding-block: .5%;
+}
+
+.containerRecipeMonth > div > ul:last-child > li::marker {
+    content: '• ';
+}
+
+
+/* style of about.html */
+
+/* .containerAbout {
+    height: 100%;
+} */
+
+.containerAboutContent {
+    /* width: 100vw; */
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+}
+
+/* .containerAboutContent > div:last-child {
+    position: relative;
+} */
+
+.containerAboutContent > div:first-child > img {
+    object-fit: contain;
+    object-position: 50%;
+    display: flex;
+    height: 33vw;
+}
+
+
+
+.containerAboutContent > div:last-child > dl{
+    height: 66vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    
+}
+
+.containerAboutContent > div:last-child > dl > dt {
+    color: antiquewhite;
+    background-color: black;
+    scroll-snap-align: start;
+    /* position: absolute; */
+}
+
+.containerAboutContent > div:last-child > dl > dd {
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    /* scroll-snap-align: start; */
+}
+
+.containerAboutContent > div:last-child > dl > dd > div {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    text-align: center;
+    align-content: center;
+    color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
